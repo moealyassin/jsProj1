@@ -21,11 +21,10 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-function getHumanChoice() {
+let getHumanChoice = () => {
   choice = prompt("rock, paper, or scissors? ").toLowerCase();
-
   return choice.trim();
-}
+};
 
 function playRound(computerChoice, humanChoice) {
   for (let i = 1; i <= 5; i++) {
@@ -59,8 +58,15 @@ function playRound(computerChoice, humanChoice) {
   console.log(humanScore + " " + computerScore);
 }
 
-function playGame() {
+const playGame = () => {
   playRound();
-}
+  console.log(`FINAL SCORE: HUMAN = ${humanScore} COMPUTER = ${computerScore}`);
+
+  if (humanScore > computerScore) {
+    console.log("Human Won!");
+  } else {
+    console.log("Computer Won!");
+  }
+};
 
 playGame();
